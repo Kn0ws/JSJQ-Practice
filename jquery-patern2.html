@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>カウントアップダウン | パターン②</title>
+</head>
+<body>
+    <h1>例題: カウントアップダウン</h1>
+    <p>+ボタンでカウントアップ、-ボタンでカウントダウン</p>
+    <h4>jQuery click条件分岐パターン</h4>
+    <div>
+        <span id="target">0</span>
+        <br>
+        <button id="up">+</button>
+        <button id="down">-</button>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>
+
+    <script>
+        // ここにJavaScript or jQueryで処理を書いてみてね
+
+        $(function(){
+
+            // 読込時点の初期カウント値を設定
+            let cnt = 0;
+
+            // id = upクリック時にcntを+1してtargetに適用
+            $("button").on('click', function(){
+                // クリックされたbutton要素のid名を取得
+                let mode = $(this).attr('id');
+                // button要素のid名がupの時、cnt+1
+                if(mode == 'up') cnt++;
+                // button要素のid名がdownの時、cnt-1
+                else if(mode == 'down') cnt--;
+                
+                $("#target").text(cnt);
+            });
+
+        });
+        
+    </script>
+</body>
+</html>

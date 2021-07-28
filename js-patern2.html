@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>カウントアップダウン | パターン②</title>
+</head>
+<body>
+    <h1>例題: カウントアップダウン</h1>
+    <p>+ボタンでカウントアップ、-ボタンでカウントダウン</p>
+    <h4>JS onclickでup down関数呼び出しパターン</h4>
+    <div>
+        <span id="target">0</span>
+        <br>
+        <button id="up">+</button>
+        <button id="down">-</button>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>
+
+    <script>
+        // ここにJavaScript or jQueryで処理を書いてみてね
+
+        // 各要素を定数に格納
+        const target = document.getElementById('target');
+        const up = document.getElementById('up');
+        const down = document.getElementById('down');
+
+        // upがクリックされた時にcountUp()関数を呼び出し
+        up.onclick = function countUp()
+        {
+            // targetの値をparseIntで数値型に変換(parse)して+1
+            target.innerHTML = parseInt(target.innerHTML) + 1;
+        }
+
+        // downがクリックされた時にcountUp()関数を呼び出し
+        down.onclick = function countDown()
+        {
+            // targetの値をparseIntで数値型に変換(parse)して-1
+            target.innerHTML = parseInt(target.innerHTML) - 1;
+        }
+
+    </script>
+</body>
+</html>
